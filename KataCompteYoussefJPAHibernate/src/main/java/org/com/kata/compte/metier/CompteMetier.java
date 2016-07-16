@@ -32,4 +32,9 @@ public class CompteMetier implements ICompteMetier {
 		return compteRepository.findAll();
 	}
 
+	public Compte findCompteByCodeCompte(String codeCompte) {
+		return compteRepository.findCompteByCodeCompte(codeCompte);
+	}
+	
+
 }

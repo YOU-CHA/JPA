@@ -1,8 +1,8 @@
 package org.com.kata.compte.entities;
 
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
@@ -46,7 +46,7 @@ public abstract class Compte implements Serializable{
 	@JoinColumn(name="CODE_CLI")
 	private Client client;
 	@OneToMany(mappedBy="compte")
-	private Collection<Operation> operations;
+	private List<Operation> operations;
 	
 	public String getCodeCompte() {
 		return codeCompte;
@@ -67,10 +67,10 @@ public abstract class Compte implements Serializable{
 		this.client = client;
 	}
 	@JsonIgnore
-	public Collection<Operation> getOperations() {
+	public List<Operation> getOperations() {
 		return operations;
 	}
-	public void setOperations(Collection<Operation> operations) {
+	public void setOperations(List<Operation> operations) {
 		this.operations = operations;
 	}
 	

@@ -1,11 +1,13 @@
 package org.com.kata.compte.metier;
 
+import org.com.kata.compte.entities.Compte;
+
 /**
  * 
  * @author Youssef CHAHID
  *
  */
 public interface IOperationMetier {
-	public boolean versement(String codeCompte, double montant);
-	public boolean retrait(String codeCompte, double montant);
+	public Compte versement(String codeCompte, double montant);
+	public Compte retrait(String codeCompte, double montant);
 }

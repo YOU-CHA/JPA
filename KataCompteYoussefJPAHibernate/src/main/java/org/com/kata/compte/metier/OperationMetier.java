@@ -22,10 +22,10 @@ public class OperationMetier implements IOperationMetier {
 	@Autowired
 	private OperationRepository operationRepository;
 	@Autowired
-	private CompteRepository compteRepository;
+	private CompteMetier compteMetier;
 	
-	public boolean versement(String codeCompte, double montant) {
-		Compte cp  = compteRepository.findOne(codeCompte);
+	public Compte versement(String codeCompte, double montant) {
+		Compte cp  = compteMetier.findCompteByCodeCompte(codeCompte);
 		Operation op = new Versement();
 		op.setDateOperation(new Date());
 		op.setMontant(montant);
@@ -35,10 +35,10 @@ public class OperationMetier implements IOperationMetier {
 		
 		cp.setSolde(cp.getSolde()+montant);
 		
-		return true;
+		return cp;
 	}
-	public boolean retrait(String codeCompte, double montant) {
-		Compte cp  = compteRepository.findOne(codeCompte);
+	public Compte retrait(String codeCompte, double montant) {
+		Compte cp  = compteMetier.findCompteByCodeCompte(codeCompte);
 		
 		if (cp.getSolde()<montant) throw new RuntimeException("Solde insufisant");
 		
@@ -51,7 +51,7 @@ public class OperationMetier implements IOperationMetier {
 		
 		cp.setSolde(cp.getSolde()-montant);
 		
-		return true;
+		return cp;
 	}
 	
 	public List<Operation> getOperationByCodeCompte(String codeCompte) {

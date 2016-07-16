@@ -1,7 +1,9 @@
 package org.com.kata.compte.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -27,7 +29,7 @@ public class Client implements Serializable {
 	private Long code;
 	private String nomClient;
 	@OneToMany(mappedBy="client",fetch=FetchType.LAZY)
-	private Collection<Compte> comptes;
+	private List<Compte> comptes = new ArrayList<Compte>();
 	public Long getCode() {
 		return code;
 	}
@@ -41,10 +43,10 @@ public class Client implements Serializable {
 		this.nomClient = nomClient;
 	}
 	@JsonIgnore
-	public Collection<Compte> getComptes() {
+	public List<Compte> getComptes() {
 		return comptes;
 	}
-	public void setComptes(Collection<Compte> comptes) {
+	public void setComptes(List<Compte> comptes) {
 		this.comptes = comptes;
 	}
 	public Client() {

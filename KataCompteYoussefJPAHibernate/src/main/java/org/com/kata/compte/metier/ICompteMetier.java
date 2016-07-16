@@ -9,4 +9,5 @@ import org.com.kata.compte.entities.Compte;
 public interface ICompteMetier {
 	public Compte saveCompte(Compte cp);
 	public Compte getCompte(String code);
+	public Compte findCompteByCodeCompte(String codeComtpe);
 }

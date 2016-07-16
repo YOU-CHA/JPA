@@ -3,6 +3,7 @@ package org.com.kata.compte.metier.services;
 
 import java.util.List;
 
+import org.com.kata.compte.entities.Compte;
 import org.com.kata.compte.entities.Operation;
 import org.com.kata.compte.metier.OperationMetier;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,14 +28,14 @@ public class OperationRestService {
 	
 	@RequestMapping(value="{idClient}/comptes/{codeCompte}/versement/{montant}",method=RequestMethod.PUT)
 	@Transactional
-	public boolean versement(@PathVariable Long idClient,@PathVariable String codeCompte,@PathVariable double montant) {
-		
+	public Compte versement(@PathVariable Long idClient,@PathVariable String codeCompte,@PathVariable double montant) {
+		System.out.println(operationMetier);
 		return operationMetier.versement(codeCompte, montant);
 	}
 	
 	@RequestMapping(value="{idClient}/comptes/{codeCompte}/retrait/{montant}",method=RequestMethod.PUT)
 	@Transactional
-	public boolean retrait(@PathVariable Long idClient,@PathVariable String codeCompte,@PathVariable double montant) {
+	public Compte retrait(@PathVariable Long idClient,@PathVariable String codeCompte,@PathVariable double montant) {
 		return operationMetier.retrait(codeCompte, montant);
 	}
 	
@@ -43,7 +44,7 @@ public class OperationRestService {
 		return operationMetier.getOperationByCodeCompte(code);
 	}
 	
-	@RequestMapping(value="/operations",method=RequestMethod.GET)
+	@RequestMapping(method=RequestMethod.GET)
 	public List<Operation> listOperation() {
 		return operationMetier.listOperations();
 	}
