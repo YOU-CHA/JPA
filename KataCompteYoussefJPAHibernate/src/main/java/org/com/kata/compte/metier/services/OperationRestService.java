@@ -1,11 +1,16 @@
 package org.com.kata.compte.metier.services;
 
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.SwaggerDefinition;
+import io.swagger.annotations.Tag;
+
 import java.util.List;
 
 import org.com.kata.compte.entities.Compte;
 import org.com.kata.compte.entities.Operation;
 import org.com.kata.compte.metier.OperationMetier;
+import org.com.kata.compte.utils.SwaggerMessages;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +23,9 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Youssef CHAHID
  *
  */
+@SwaggerDefinition(tags = {
+		@Tag(name = SwaggerMessages.OPERATION_CONTROLLER_LIBELLE, description = SwaggerMessages.OPERATION_CONTROLLER_DESCRIPTION) })
+@Api(value= SwaggerMessages.OPERATION_CONTROLLER_LIBELLE,description=SwaggerMessages.OPERATION_CONTROLLER_DESCRIPTION)
 @RestController
 @RequestMapping("/api/operations")
 public class OperationRestService {
