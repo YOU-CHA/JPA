@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.xml.bind.annotation.XmlType;
 /**
  * 
  * @author Youssef CHAHID
@@ -12,6 +13,7 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("CE")
 
+@XmlType(name="CE")
 public class CompteEpargne extends Compte {
 	/**
 	 * 

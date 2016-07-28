@@ -13,6 +13,8 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlTransient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -33,6 +35,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  * @author Youssef CHAHID
  *
  */
+@XmlSeeAlso({CompteCourant.class,CompteEpargne.class}) // JAX-B polymorphisme
 public abstract class Compte implements Serializable{
 	/**
 	 * 
@@ -66,7 +69,8 @@ public abstract class Compte implements Serializable{
 	public void setClient(Client client) {
 		this.client = client;
 	}
-	@JsonIgnore
+	@JsonIgnore //JSON
+	@XmlTransient //JAX-B
 	public List<Operation> getOperations() {
 		return operations;
 	}

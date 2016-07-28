@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.xml.bind.annotation.XmlTransient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 /**
@@ -42,7 +43,8 @@ public class Client implements Serializable {
 	public void setNomClient(String nomClient) {
 		this.nomClient = nomClient;
 	}
-	@JsonIgnore
+	@JsonIgnore // JSON
+	@XmlTransient // JAX-B
 	public List<Compte> getComptes() {
 		return comptes;
 	}
