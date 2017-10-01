@@ -91,6 +91,6 @@ public class SwaggerMessages {
 	public static final String MESSAGE_CONTROLLER_LIBELLE = "Message";
 	public static final String MESSAGE_CONTROLLER_DESCRIPTION = "Gestion des messages";
 
-	public static final String MESSAGE_CONTROLLER_GET_MESSAGES_DESCRIPTION = "Listes messages";
+	public static final String MESSAGE_CONTROLLER_GET_MESSAGES = "Listes messages";
 	public static final String CONTROLLER_NOT_FOUND_ERROR_404 = "<div style=\"width:300%;\"><p><b>MESSAGE_NOT_FOUND</b>: Aucun message trouvé.</p></div>";	
 }
