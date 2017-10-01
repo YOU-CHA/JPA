@@ -43,7 +43,7 @@ public abstract class Compte implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
 	private String codeCompte ;
-	private Date dateCreation;
+	private Date dateCreationCompte;
 	private double solde;
 	@ManyToOne
 	@JoinColumn(name="CODE_CLI")
@@ -58,10 +58,10 @@ public abstract class Compte implements Serializable{
 		this.codeCompte = codeCompte;
 	}
 	public Date getDateCreation() {
-		return dateCreation;
+		return dateCreationCompte;
 	}
 	public void setDateCreation(Date dateCreation) {
-		this.dateCreation = dateCreation;
+		this.dateCreationCompte = dateCreation;
 	}
 	public Client getClient() {
 		return client;
@@ -91,7 +91,7 @@ public abstract class Compte implements Serializable{
 	public Compte(String codeCompte, Date dateCreation, double solde) {
 		super();
 		this.codeCompte = codeCompte;
-		this.dateCreation = dateCreation;
+		this.dateCreationCompte = dateCreation;
 		this.solde = solde;
 	}
 	
