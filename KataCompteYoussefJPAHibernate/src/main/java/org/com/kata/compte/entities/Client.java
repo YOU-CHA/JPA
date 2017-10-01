@@ -28,7 +28,7 @@ public class Client implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long codeClient;
-	private String nomClient;
+	private String clientName;
 	@OneToMany(mappedBy="client",fetch=FetchType.LAZY)
 	private List<Compte> comptes = new ArrayList<Compte>();
 	public Long getCode() {
@@ -38,10 +38,10 @@ public class Client implements Serializable {
 		this.codeClient = code;
 	}
 	public String getNomClient() {
-		return nomClient;
+		return clientName;
 	}
 	public void setNomClient(String nomClient) {
-		this.nomClient = nomClient;
+		this.clientName = nomClient;
 	}
 	@JsonIgnore // JSON
 	@XmlTransient // JAX-B
@@ -56,7 +56,7 @@ public class Client implements Serializable {
 	}
 	public Client(String nomClient) {
 		super();
-		this.nomClient = nomClient;
+		this.clientName = nomClient;
 	}
 	
 	
