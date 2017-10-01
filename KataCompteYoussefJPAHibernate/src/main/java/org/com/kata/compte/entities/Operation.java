@@ -44,7 +44,7 @@ public class Operation implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long numeroOperation;
 	private Date dateOperation;
-	private double montant;
+	private double montantOperation;
 	@ManyToOne
 	@JoinColumn(name="CODE_CPTE")
 	private Compte compte;
@@ -74,7 +74,7 @@ public class Operation implements Serializable{
 		super();
 		this.numeroOperation = numeroOperation;
 		this.dateOperation = dateOperation;
-		this.montant = montant;
+		this.montantOperation = montant;
 	}
 
 	public Date getDateOperation() {
@@ -86,11 +86,11 @@ public class Operation implements Serializable{
 	}
 
 	public double getMontant() {
-		return montant;
+		return montantOperation;
 	}
 
 	public void setMontant(double montant) {
-		this.montant = montant;
+		this.montantOperation = montant;
 	}
 	
 	
