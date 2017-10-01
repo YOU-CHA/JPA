@@ -27,15 +27,15 @@ public class Client implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long code;
+	private Long codeClient;
 	private String nomClient;
 	@OneToMany(mappedBy="client",fetch=FetchType.LAZY)
 	private List<Compte> comptes = new ArrayList<Compte>();
 	public Long getCode() {
-		return code;
+		return codeClient;
 	}
 	public void setCode(Long code) {
-		this.code = code;
+		this.codeClient = code;
 	}
 	public String getNomClient() {
 		return nomClient;
