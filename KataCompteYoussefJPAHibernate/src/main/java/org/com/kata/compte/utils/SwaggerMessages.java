@@ -65,10 +65,6 @@ public class SwaggerMessages {
 	 **/
 	public static final String OPERATION_CONTROLLER_LIBELLE ="operations";
 	public static final String OPERATION_CONTROLLER_DESCRIPTION = "EndPoint pour la gestion des Operations";
-//	public static final String COMPTE_CONTROLLER_GET_COMPTES_DESCRIPTION = "Listes operations";
-//	public static final String COMPTE_CONTROLLER_POST_COMPTE_DESCRIPTION = "Ajouter compte";
-//	public static final String COMPTE_CONTROLLER_GET_BY_ID = "Chercher Compte par KEY";
-	
 	
 	public static final String USER_NOT_FOUND = "<p><b>USER_NOT_FOUND</b>: Utilisateur non trouvé.</p>";
 	public static final String BAD_INPUT_PARAMETER_CRITERIA = "<p><b>BAD_INPUT_PARAMETER</b>: Les paramètres de la requête sont incorrects.</p>";
